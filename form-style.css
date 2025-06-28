@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #2EC4B6; /* Teal */
+    --secondary-color: #000000; /* Black */
+    --text-color: #333333;
+    --light-text-color: #FFFFFF;
+    --background-color: #FFFFFF;
+    --alt-background-color: #f8f9fa; /* Light Gray */
+    --heading-font: 'Noto Kufi Arabic', 'Open Sans', sans-serif;
+    --body-font: 'Noto Kufi Arabic', 'Open Sans', sans-serif;    
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: var(--body-font);
+    background-color: var(--alt-background-color); /* Uses the light gray page background */
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- Form Container --- */
+.form-card {
+    background-color: var(--background-color);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+    max-width: 700px;
+    width: 100%;
+}
+
+
+h1 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.2em; 
+}
+
+.form-card p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- NEW: Specific Styling for Form Inputs --- */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: var(--body-font); 
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(46, 196, 182, 0.3); /* Shadow matches your primary color */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+
+.btn {
+    display: inline-block;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+}
+
+.btn-primary:hover {
+    background-color: #25a193; 
+    transform: translateY(-2px);
+}
+
+/* Full-width modification for the form button */
+.btn.full-width {
+    width: 100%;
+    margin: 10px 0 0 0;
+    font-size: 1.1em;
+    padding: 15px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+    .form-card {
+        padding: 25px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+}
