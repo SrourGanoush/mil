@@ -58,7 +58,9 @@ body {
 .logo a {
     text-decoration: none;
 }
-
+.logo img {
+    height: 40px;
+}
 .logo-text {
     font-size: 1.8em;
     font-weight: 700;
@@ -212,6 +214,9 @@ textarea {
         font-size: 1em;
         padding: 5px 8px;
     }
+
+}
+
     a {
     color: var(--primary-color);
     text-decoration: none;
@@ -219,5 +224,4 @@ textarea {
 
 a:hover {
     color: #0C4F63;
-}
 }
