@@ -221,7 +221,10 @@ textarea {
     color: var(--primary-color);
     text-decoration: none;
 }
-
+.nav-link {
+    font-size: large;
+    padding: 10px;
+}
 a:hover {
     color: #0C4F63;
 }
