@@ -8,79 +8,95 @@
     <link rel="stylesheet" href="form-style.css">
 </head>
 <body>
-    
-    <div class="form-card">
-        <h1>تسجيل مشروع</h1>
-        <p>
-            املأ النموذج أدناه لتسجيل مشروعك في منصة "صنع في ليبيا".
-        </p>
-<p style="color:var(--primary-color);">
-ملاحظة: في المرحلة الاولى تم إطلاق التطبيق لمستخدمي أندرويد فقط. و استخدام حساب جيميل للدخول على التطبيق.        </p>
-        <form
-            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd2i0YkL18cJmBorti4qnBO1oAhdmkowQJZplzb-iQpJItcKA/formResponse"
-            method="POST"
-            target="hidden_iframe"
-            onsubmit="submitted=true;">
 
-            <!-- Gmail Address -->
-            <label for="gmail">البريد الإلكتروني (Gmail) *</label>
-            <input type="email" id="gmail" name="entry.66964073" required>
+    <header class="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="nav-link active-nav">الرئيسية</a>
+                <a href="how-to-maker.html" class="nav-link">دليل المٌصنِّع</a>
+            </nav>
+             <div class="logo">
+                <img src="images/logo.png" alt="شعار صنع في ليبيا"> 
+            </div>
+        </div>
+    </header>
 
-            <!-- Project Name -->
-            <label for="project-name">اسم المشروع *</label>
-            <input type="text" id="project-name" name="entry.2040629534" required>
+    <main class="main-content">
+        <div class="form-card">
+            <h1>تسجيل مشروع</h1>
+            <p>
+                املأ النموذج أدناه لتسجيل مشروعك في منصة "صنع في ليبيا".
+            </p>
+            <p style="color:var(--primary-color);">
+                ملاحظة: في المرحلة الاولى تم إطلاق التطبيق لمستخدمي أندرويد فقط. و استخدام حساب جيميل للدخول على التطبيق.
+            </p>
+            <form
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd2i0YkL18cJmBorti4qnBO1oAhdmkowQJZplzb-iQpJItcKA/formResponse"
+                method="POST"
+                target="hidden_iframe"
+                onsubmit="submitted=true;">
 
-            <!-- Main Industry Sector -->
-            <label for="industry-sector">قطاع الصناعة الرئيسي *</label>
-            <select id="industry-sector" name="entry.433186974" required>
-                <option value="" disabled selected>اختر قطاعاً...</option>
-                <option value="الأغذية الصحية">الأغذية الصحية</option>
-                <option value="المنسوجات">المنسوجات</option>
-                <option value="الملابس">الملابس</option>
-                <option value="النجارة">النجارة</option>
-                <option value="اللدائن">اللدائن</option>
-                <option value="الآلات والمعدات">الآلات والمعدات</option>
-                <option value="الإلكترونيات">الإلكترونيات</option>
-                <option value="الحرفية واليدوية">الحرفية واليدوية</option>
-                <option value="مواد البناء">مواد البناء</option>
-                <option value="غير مذكور">غير مذكور</option>
-            </select>
+                <!-- Gmail Address -->
+                <label for="gmail">البريد الإلكتروني (Gmail) *</label>
+                <input type="email" id="gmail" name="entry.66964073" required>
 
-            <!-- Other Sector -->
-            <label for="other-sector">اذا كان القطاع غير مذكور، يرجى ذكره هنا</label>
-            <input type="text" id="other-sector" name="entry.244531918">
+                <!-- Project Name -->
+                <label for="project-name">اسم المشروع *</label>
+                <input type="text" id="project-name" name="entry.2040629534" required>
 
-            <!-- Products -->
-            <label for="products">المنتجات التي يتم صناعتها *</label>
-            <textarea id="products" name="entry.931046763" required></textarea>
+                <!-- Main Industry Sector -->
+                <label for="industry-sector">قطاع الصناعة الرئيسي *</label>
+                <select id="industry-sector" name="entry.433186974" required>
+                    <option value="" disabled selected>اختر قطاعاً...</option>
+                    <option value="الأغذية الصحية">الأغذية الصحية</option>
+                    <option value="المنسوجات">المنسوجات</option>
+                    <option value="الملابس">الملابس</option>
+                    <option value="النجارة">النجارة</option>
+                    <option value="اللدائن">اللدائن</option>
+                    <option value="الآلات والمعدات">الآلات والمعدات</option>
+                    <option value="الإلكترونيات">الإلكترونيات</option>
+                    <option value="الحرفية واليدوية">الحرفية واليدوية</option>
+                    <option value="مواد البناء">مواد البناء</option>
+                    <option value="غير مذكور">غير مذكور</option>
+                </select>
 
-            <!-- City -->
-            <label for="city">المدينة *</label>
-            <input type="text" id="city" name="entry.1397921274" required>
+                <!-- Other Sector -->
+                <label for="other-sector">اذا كان القطاع غير مذكور، يرجى ذكره هنا</label>
+                <input type="text" id="other-sector" name="entry.244531918">
 
-            <!-- Address -->
-            <label for="address">العنوان</label>
-            <input type="text" id="address" name="entry.1839486429">
+                <!-- Products -->
+                <label for="products">المنتجات التي يتم صناعتها *</label>
+                <textarea id="products" name="entry.931046763" required></textarea>
 
-            <!-- Owner's Name -->
-            <label for="owner-name">إسم صاحب المشروع *</label>
-            <input type="text" id="owner-name" name="entry.273335853" required>
+                <!-- City -->
+                <label for="city">المدينة *</label>
+                <input type="text" id="city" name="entry.1397921274" required>
 
-            <!-- Owner's Phone -->
-            <label for="owner-phone">رقم صاحب المشروع Whatsapp (للدعم التقني) *</label>
-            <input type="tel" id="owner-phone" name="entry.1067601785" required>
+                <!-- Address -->
+                <label for="address">العنوان</label>
+                <input type="text" id="address" name="entry.1839486429">
 
-            <!-- Business Phone -->
-            <label for="business-phone">رقم هاتف المشروع (للتواصل مع الزبائن)</label>
-            <input type="tel" id="business-phone" name="entry.247333786">
+                <!-- Owner's Name -->
+                <label for="owner-name">إسم صاحب المشروع *</label>
+                <input type="text" id="owner-name" name="entry.273335853" required>
 
-            <!-- Facebook Page -->
-            <label for="facebook-page">الصفحة الخاصة بالمشروع على الفيسبوك (يجب أن تحوي على بعض من منتجاتك) *</label>
-            <input type="url" id="facebook-page" name="entry.1722104698" required>
+                <!-- Owner's Phone -->
+                <label for="owner-phone">رقم صاحب المشروع Whatsapp (للدعم التقني) *</label>
+                <input type="tel" id="owner-phone" name="entry.1067601785" required>
 
-            <button type="submit" class="btn btn-primary full-width">إرسال التسجيل</button>
-        </form>
-    </div>
+                <!-- Business Phone -->
+                <label for="business-phone">رقم هاتف المشروع (للتواصل مع الزبائن)</label>
+                <input type="tel" id="business-phone" name="entry.247333786">
+
+                <!-- Facebook Page -->
+                <label for="facebook-page">الصفحة الخاصة بالمشروع على الفيسبوك (يجب أن تحوي على بعض من منتجاتك) *</label>
+                <input type="url" id="facebook-page" name="entry.1722104698" required>
+
+                <button type="submit" class="btn btn-primary full-width">إرسال التسجيل</button>
+            </form>
+        </div>
+    </main>
+
 
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thank-you.html';}"></iframe>
     <script type="text/javascript">var submitted=false;</script>
