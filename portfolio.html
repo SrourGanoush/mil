@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف تعريفي | سرور قنوش</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #252525;
+            --secondary-bg: #FFFFFF;
+            --light-gray-bg: #f9f9f9;
+            --text-light: #FFFFFF;
+            --text-dark: #333333;
+            --text-muted: #777777;
+            --accent-color: #00796b; 
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            background-color: var(--secondary-bg);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* --- Header & Navigation --- */
+        .header {
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            padding-top: 20px;
+            position: relative;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 150px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin: 0;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #ddd;
+            margin-top: 15px;
+            letter-spacing: 1px;
+        }
+
+        .wave-divider {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(0);
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 120px;
+        }
+
+        .wave-divider .shape-fill {
+            fill: var(--secondary-bg);
+        }
+        
+        /* --- General Section Styling --- */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background: var(--accent-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- About Section --- */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            flex-basis: 300px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* --- Skills/Services Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background-color: var(--light-gray-bg);
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .skill-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* --- Projects/Portfolio Section --- */
+        #projects {
+             background-color: var(--light-gray-bg);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        
+        .project-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .project-card p {
+            flex-grow: 1;
+            line-height: 1.7;
+        }
+
+        .project-card a {
+            color: var(--accent-color);
+            font-weight: 700;
+            margin-top: 15px;
+        }
+        
+        /* --- Awards Section --- */
+        .awards-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .award-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background: var(--light-gray-bg);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+        
+        .award-item .icon {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+        }
+
+        .award-item h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+        }
+        
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--primary-bg);
+            color: var(--text-light);
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .footer a {
+            color: var(--accent-color);
+        }
+        
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } 
+            .hero h1 { font-size: 2.5rem; }
+            .hero { padding: 80px 20px 120px 20px; }
+            .about-content { flex-direction: column; text-align: center; }
+            .about-image { margin-top: 30px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header & Hero Section -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#about">نبذة عني</a></li>
+                    <li><a href="#skills">المهارات</a></li>
+                    <li><a href="#projects">المشاريع</a></li>
+                    <li><a href="#awards">الجوائز</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="hero">
+            <h1>أهلاً، أنا سرور قنوش</h1>
+            <p class="subtitle">متخصصة في الأمن السيبراني | مهندسة حلول | رائدة أعمال</p>
+        </div>
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container about-content">
+                <div class="about-text">
+                    <h3>عن سرور</h3>
+                    <p>
+                       مهندسة حلول ومتخصصة في الأمن السيبراني ورائدة أعمال، شغوفة بإيجاد حلول تقنية مبتكرة ومؤمنة. مؤسسة منصة "صنع في ليبيا"، وهي مبادرة تهدف إلى دعم وترويج المنتجات المحلية الليبية وتعزيز الاقتصاد الوطني.
+                    </p>
+                    <a href="https://www.linkedin.com/in/srour-ganoush-404b98131/" class="btn" target="_blank">زيارة ملفي على LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section" style="background-color: var(--light-gray-bg);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>الخبرات والمهارات</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="icon">💻</div>
+                        <h3>هندسة الحلول الرقمية</h3>
+                        <p>تصميم وبناء حلول تقنية متكاملة وقابلة للتطوير لتلبية متطلبات العمل المعقدة.</p>
+                    </div>
+                     <div class="skill-card">
+                        <div class="icon">🛡️</div>
+                        <h3>الأمن السيبراني</h3>
+                        <p>خبرة في اكتشاف الثغرات الأمنية و حماية الأنظمة والتطبيقات.</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🚀</div>
+                        <h3>ريادة الأعمال</h3>
+                        <p>تأسيس وإدارة المشاريع التقنية من الفكرة إلى الإطلاق في السوق.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>المشاريع</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>منصة "صنع في ليبيا"</h3>
+                            <p>منصة إلكترونية متكاملة لدعم الصناعات المحلية. تهدف لتعزيز الوعي بالمنتجات الوطنية وربط المنتجين بالمستهلكين.</p>
+                            <a href="http://www.milibya.app" target="_blank">زيارة الموقع &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>مشروع مساعدي التعليمي</h3>
+                            <!-- UPDATED DESCRIPTION -->
+                            <p>
+                                حل يغطي هدفي "التعليم الجيد" و"الصحة الجيدة" من أهداف الأمم المتحدة. يهدف إلى رقمنة التعليم عبر تطبيق ويب للوزارات والمدارس، وتطبيق جوال للطلاب والمعلمين، مع التكامل مع Google Workspace والمساهمة في الحماية من الأوبئة والطوارئ.
+                            </p>
+                            <a href="https://www.youtube.com/watch?v=aoZ4-rEb9QE" target="_blank">مشاهدة العرض&rarr;</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>منصة Volunteer for Well-being</h3>
+                            <p>مشروع مجتمعي تم تطويره كجزء من منحة Google لمطوري أفريقيا، بهدف ربط المتطوعين بالفرص التي تخدم المجتمع.</p>
+                            <a href="https://www.youtube.com/watch?v=5c9C1m3OcF8&feature=youtu.be" target="_blank">مشاهدة العرض&rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Awards Section -->
+        <section id="awards" class="section" style="background-color: var(--light-gray-bg);">
+            <div class="container">
+                 <div class="section-title">
+                    <h2>الجوائز والتقديرات</h2>
+                </div>
+                <div class.awards-list">
+                    <div class="award-item">
+                        <div class="icon">🏆</div>
+                        <div>
+                            <h4>المركز الأول - تحدي Google للمطورين</h4>
+                            <p>الفوز في مسابقة DevChallenge التي نظمتها Google في طرابلس، ليبيا.</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="icon">🥇</div>
+                        <div>
+                            <h4>المركز الأول - منحة Google لمطوري أفريقيا 2021</h4>
+                            <p>الفوز عن فئة المشاريع المجتمعية ضمن برنامج المنحة.</p>
+                        </div>
+                    </div>
+                     <div class="award-item">
+                        <div class="icon">🛡️</div>
+                        <div>
+                            <h4>اكتشاف ثغرات أمنية (CVEs)</h4>
+                            <p>اكتشاف ثغرات في أنظمة FortiSiem (CVE-2019-17653, CVE-2019-16153).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>للتواصل، يمكنكم زيارة ملفي الشخصي على <a href="https://www.linkedin.com/in/srour-ganoush-404b98131/" target="_blank">LinkedIn</a>.</p>
+            <p>&copy; 2025 - سرور قنوش</p>
+        </div>
+    </footer>
+
+</body>
+</html>
